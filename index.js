@@ -1,8 +1,6 @@
 const express = require('express');
-const mysql = require('mysql');
 const bodyParser = require('body-parser');
 
-const tasks = require('./db.js');
 const addRouter = require('./routes/addRoute.js');
 const rootRouter = require('./routes/root.js');
 

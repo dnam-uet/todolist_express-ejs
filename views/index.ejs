@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo App</title>
+    <!-- <link rel="stylesheet" href="../public/css/style.css"> -->
+</head>
+<body>
+    <div class="container">
+        <h2>A Simple ToDo List App</h2>
+        <form action="/" method="post">
+            <input type="text" name="newTask" placeholder="Add a new task">
+            <button formaction="/addtask">Add Task</button>
+
+            <h2>Added Task</h2>
+            <%
+                for(let i = 0; i < tasks.length; i++){ %>
+                    <li><input type="checkbox" name="check" value="<%= tasks[i] %>" /> <%= tasks[i] %></li>
+                <%}
+            %>
+            <button formaction="/removetask" type="submit">Remove</button>
+        </form>
+
+        <h2>Completed task</h2>
+    </div>
+</body>
+</html>

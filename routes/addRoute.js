@@ -8,9 +8,10 @@ const addRouter = express.Router();
 addRouter.post('/', (req, res) => {
     let newTask = req.body.newTask;
     let id = shortid.generate();
+    let sql = 'INSERT INTO todos SET id = ?, task = ?, status="doing"';
 
     // Add the new task from the post route into the database
-    connection.query('INSERT INTO task SET id = ?, main = ?',[id, newTask], (err, results, fields) => {
+    connection.query(sql,[id, newTask], (err, results, fields) => {
         if(err) throw err;
     })
     // After adding to the array go back to the root route

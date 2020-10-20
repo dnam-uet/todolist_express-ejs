@@ -16,13 +16,18 @@
             <h2>Added Task</h2>
             <%
                 for(let i = 0; i < tasks.length; i++){ %>
-                    <li><input type="checkbox" name="check" value="<%= tasks[i].main %>" /> <%= tasks[i].main %></li>
+                    <li><input type="checkbox" name="check" value="<%= tasks[i].id %>" /> <%= tasks[i].task %></li>
                 <%}
             %>
             <button formaction="/removetask" type="submit">Remove</button>
+            <button formaction="/donetask" type="submit">Done</button>
+            <h2>Completed task</h2>
+            <%
+                for(let i=0; i<done.length; i++) { %>
+                    <li><input type="checkbox" name="check" value="<%= done[i].id %>" /> <%= done[i].task %></li>
+                    
+            <% } %>
         </form>
-
-        <h2>Completed task</h2>
     </div>
 </body>
 </html>

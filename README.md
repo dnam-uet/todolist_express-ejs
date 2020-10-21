@@ -24,7 +24,7 @@ to check npm verson
 
 Run 
 
-`` npm init```
+``` npm init```
 
 Run project with
 

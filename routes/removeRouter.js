@@ -25,4 +25,15 @@ removeRouter.post('/', (req, res) => {
     res.redirect('/')
 })
 
+removeRouter.post('/:id', (req, res) => {
+
+    let sql = 'DELETE FROM todos WHERE id=?';
+
+    connection.query(sql, [req.params.id] , (err , results, fields) => {
+        if(err) throw err;
+    })
+
+    res.redirect('/');
+})
+
 module.exports = removeRouter;

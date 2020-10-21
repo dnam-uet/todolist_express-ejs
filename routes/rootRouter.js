@@ -14,7 +14,7 @@ rootRouter.get('/', (req, res) => {
             if(result.status === "doing") tasks.push(result);
             else if(result.status === "done") done.push(result);
         }
-        // res.send(done);
+
         res.render('index', {
             tasks: tasks,
             done: done

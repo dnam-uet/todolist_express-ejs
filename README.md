@@ -29,3 +29,7 @@ Run
 Run project with
 
 ``` npm start ```
+
+### Updating
+
+Client rendering, using React

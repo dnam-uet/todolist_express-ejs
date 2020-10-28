@@ -5,7 +5,8 @@ const connection = require('../db.js');
 const rootRouter = express.Router();
 
 rootRouter.get('/', (req, res) => {
-    let sql = 'SELECT * FROM todos';
+    res.header("Access-Control-Allow-Origin", "*");
+    let sql = 'SELECT * FROM todos LIMIT 12';
     connection.query(sql, (err, results, fields) => {
         if(err) throw err;
         let tasks = [];
@@ -15,10 +16,7 @@ rootRouter.get('/', (req, res) => {
             else if(result.status === "done") done.push(result);
         }
 
-        res.render('index', {
-            tasks: tasks,
-            done: done
-        })
+        res.send(results);
     });
 })
 

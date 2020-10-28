@@ -12,6 +12,24 @@ Open command prompt, move to folder contain project run
 
 to open VSCode
 
+Run
+
+```node -v ```
+to check node version
+
+Run
+
+``` npm -v ``` 
+to check npm verson
+
+Run 
+
+``` npm init```
+
 Run project with
 
 ``` npm start ```
+
+### Updating
+
+Client rendering, using React

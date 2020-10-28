@@ -11,7 +11,7 @@ addRouter.post('/', (req, res) => {
     let id = shortid.generate();
     const obj = {
         id: id,
-        task: newTask,
+        title: newTask,
         completed: false
     }
     let sql = 'INSERT INTO todos SET id = ?, task = ?, status="doing"';

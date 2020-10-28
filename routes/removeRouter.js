@@ -25,15 +25,13 @@ const removeRouter = express.Router();
 //     res.redirect('/')
 // })
 
-removeRouter.post('/', (req, res) => {
-    const id = req.body.id;
+removeRouter.delete('/:id', (req, res) => {
     let sql = 'DELETE FROM todos WHERE id=?';
 
-    connection.query(sql, [id] , (err , results, fields) => {
+    connection.query(sql, [req.params.id] , (err , results, fields) => {
         if(err) throw err;
     })
-
-    res.redirect('/');
+    // res.redirect('/');
 })
 
 module.exports = removeRouter;

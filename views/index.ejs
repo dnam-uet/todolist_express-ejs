@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo App</title>
+    <style>
+        .container{
+            margin: 5rem 30rem;
+            font-family: sans-serif;
+            padding: 20px;
+            border: 3px solid #000;
+            border-radius: 20px;
+            min-height: 400px;
+        }
+
+        #newTask{
+            height: 25px;
+        }
+
+        input{
+            margin-bottom: 1rem;
+        }
+
+        li{
+            list-style-type: none;
+        }
+
+        #btn-add{
+            outline: none;
+            width: 80px;
+            height: 30px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>A Minimalist ToDo List App</h2>
+        <form action="/" method="post">
+            <input type="text" name="newTask" placeholder="Add a new task" id="newTask" >
+            <button formaction="/addtask" id="btn-add">Add Task</button>
+
+            <h2>Added Task</h2>
+            <%
+                for(let i = 0; i < tasks.length; i++){ %>
+                    <li>
+                        <input type="checkbox" name="check" value="<%= tasks[i].id %>" /> <%= tasks[i].task %>
+                        <button type="submit" formaction= <%= `/removetask/${tasks[i].id}` %>>X</button>
+                    </li>
+                <%}
+            %>
+            <button formaction="/donetask" type="submit" id="btn-done">Done</button>
+            <button formaction="/removetask" type="submit" id="btn-remove">Remove</button>
+            <h2>Completed task</h2>
+            <%
+                for(let i=0; i<done.length; i++) { %>
+                    <li><input type="checkbox" name="check" value="<%= done[i].id %>" /> <%= done[i].task %></li>
+                    
+            <% } %>
+        </form>
+    </div>
+</body>
+</html>
